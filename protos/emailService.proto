@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.email";
+option java_outer_classname = "email";
+option objc_class_prefix = "HLW";
+
+package email;
+
+// The user service definition.
+service email_service {
+  rpc sendEmail (sendEmailDetails) returns (response) {}
+}
+
+message sendEmailDetails {
+  string emailService = 1;
+  string toEmail = 2;
+  string userName = 3;
+  string subject = 4;
+  string body = 5;
+  string trigger = 6;
+  string httpFilePath= 7;
+  string localFilePath= 8;
+  string campaignId = 9;
+}
+
+message response  {
+  string message = 1;
+}

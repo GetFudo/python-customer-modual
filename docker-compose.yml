@@ -1,0 +1,16 @@
+version: "2"
+services:
+  django:
+    container_name: search_server
+    restart: always
+    image: appscrip007/search_filter:GetFudo
+    stdin_open: true
+    tty: true
+    env_file: /usr/etc/env
+    ports:
+      - "8002:8002"
+      - "8004:8004"
+    logging:
+      options:
+        max-size: "1m"
+        max-file: "3"

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.notification";
+option java_outer_classname = "notification";
+option objc_class_prefix = "HLW";
+
+
+package notification;
+
+service Greeter {
+  // Sends a greeting
+  rpc SendNotification (NotificationRequest) returns (NotificationReply) {}
+  rpc NotificationLogs (NotificationLogsRequest) returns (NotificationLogsReply) {}
+}
+
+// The request message containing the userid, text and description.
+message NotificationRequest {
+  string body_data = 1;
+}
+
+// The response message containing the greetings
+message NotificationReply {
+  string message = 1;
+}
+
+message NotificationLogsRequest{
+  string json_data = 1;
+}
+
+message NotificationLogsReply {
+  string message = 1;
+}

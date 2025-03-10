@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.inventory";
+option java_outer_classname = "inventory";
+option objc_class_prefix = "HLW";
+
+
+package inventory;
+
+service Greeter {
+  // Sends a greeting
+  rpc ValidateInventoryData (InventoryRequest) returns (InventoryReply) {}
+}
+
+// The request message containing the userid, text and description.
+message InventoryRequest {
+  string body_data = 1;
+}
+
+// The response message containing the greetings
+message InventoryReply {
+  string message = 1;
+}
